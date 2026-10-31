@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="cabinetMedical">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="medecins">
+                    <xs:complexType><xs:sequence>
+                        <xs:element name="medecin" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType><xs:sequence>
+                                <xs:element name="nom" type="xs:string"/>
+                                <xs:element name="telephone" type="xs:string"/>
+                            </xs:sequence>
+                                <xs:attribute name="id" type="xs:ID" use="required"/>
+                                <xs:attribute name="specialite" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence></xs:complexType>
+                </xs:element>
+                <xs:element name="patients">
+                    <xs:complexType><xs:sequence>
+                        <xs:element name="patient" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType><xs:sequence>
+                                <xs:element name="nom" type="xs:string"/>
+                                <xs:element name="dateNaissance" type="xs:date"/>
+                                <xs:element name="telephone" type="xs:string"/>
+                            </xs:sequence>
+                                <xs:attribute name="id" type="xs:ID" use="required"/>
+                                <xs:attribute name="actif" type="xs:boolean" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence></xs:complexType>
+                </xs:element>
+                <xs:element name="rendezVous">
+                    <xs:complexType><xs:sequence>
+                        <xs:element name="rendezVousItem" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType><xs:sequence>
+                                <xs:element name="date" type="xs:date"/>
+                                <xs:element name="heure" type="xs:time"/>
+                                <xs:element name="motif" type="xs:string"/>
+                            </xs:sequence>
+                                <xs:attribute name="id" type="xs:ID" use="required"/>
+                                <xs:attribute name="statut" use="required">
+                                    <xs:simpleType><xs:restriction base="xs:string">
+                                        <xs:enumeration value="confirme"/>
+                                        <xs:enumeration value="en_attente"/>
+                                        <xs:enumeration value="annule"/>
+                                    </xs:restriction></xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="patientId" type="xs:IDREF" use="required"/>
+                                <xs:attribute name="medecinId" type="xs:IDREF" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence></xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

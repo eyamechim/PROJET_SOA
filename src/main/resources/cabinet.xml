@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cabinetMedical>
+    <medecins>
+        <medecin id="M001" specialite="gynecologue">
+            <nom>mechim</nom>
+            <telephone>73311222</telephone>
+        </medecin>
+        <medecin id="M002" specialite="Medecine generale">
+            <nom>kmiha</nom>
+            <telephone>70111222</telephone>
+        </medecin>
+        <medecin id="M003" specialite="Cardiologie">
+            <nom>lajnaf</nom>
+            <telephone>73333444</telephone>
+        </medecin>
+        <medecin id="M004" specialite="orthophoniste">
+            <nom>megdiche</nom>
+            <telephone>74411222</telephone>
+        </medecin>
+    </medecins>
+    <patients>
+        <patient id="P001" actif="true">
+            <nom>thana ben mansour</nom>
+            <dateNaissance>1998-04-12</dateNaissance>
+            <telephone>20123456</telephone>
+        </patient>
+        <patient id="P002" actif="true">
+            <nom>rayen ezzedine </nom>
+            <dateNaissance>1985-09-03</dateNaissance>
+            <telephone>22112233</telephone>
+        </patient>
+        <patient id="P003" actif="false">
+            <nom>rayen adsi</nom>
+            <dateNaissance>1972-01-25</dateNaissance>
+            <telephone>55123456</telephone>
+        </patient>
+        <patient id="P004" actif="false">
+            <nom>souha saidi </nom>
+            <dateNaissance>1920-02-28</dateNaissance>
+            <telephone>56723456</telephone>
+        </patient>
+    </patients>
+    <rendezVous>
+        <rendezVousItem id="R001" statut="confirme" patientId="P001" medecinId="M001">
+            <date>2026-11-02</date>
+            <heure>09:30:00</heure>
+            <motif>Consultation generale</motif>
+        </rendezVousItem>
+        <rendezVousItem id="R002" statut="en_attente" patientId="P002" medecinId="M002">
+            <date>2026-11-02</date>
+            <heure>10:00:00</heure>
+            <motif>Suivi cardiaque</motif>
+        </rendezVousItem>
+        <rendezVousItem id="R003" statut="confirme" patientId="P003" medecinId="M001">
+            <date>2026-11-03</date>
+            <heure>11:15:00</heure>
+            <motif>Controle annuel</motif>
+        </rendezVousItem>
+    </rendezVous>
+</cabinetMedical>
